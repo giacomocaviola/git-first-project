@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         TEST_VAR = "test numero 5"
+        SERVER_CREDENTIALS = credentials("gitCredentials")
     }
     stages {
         stage('Build') {
@@ -23,6 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                echo "${SERVER_CREDENTIALS}"
             }
         }
     }
