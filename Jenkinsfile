@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             when {
                 expression {
-                BRANCH_NAME == 'master'
+                BRANCH_NAME == 'masterer'
                 }
             }
             steps {
@@ -20,23 +20,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-            }
-        }
-    }
-    post {
-        always {
-             steps {
-                echo 'always..'
-            }
-        }
-        failure {
-             teps {
-               echo 'failure..'
-            }
-        }
-        success {
-             steps {
-               echo 'success!..'
             }
         }
     }
