@@ -25,13 +25,19 @@ pipeline {
     }
     post {
         always {
-            //
+             steps {
+                echo 'always..'
+            }
         }
         failure {
-        
+             teps {
+               echo 'failure..'
+            }
         }
         success {
-        
+             steps {
+               echo 'success!..'
+            }
         }
     }
 }
